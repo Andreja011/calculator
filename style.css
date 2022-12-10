@@ -130,7 +130,7 @@ a {
 
 .calculator-body-buttons-delete .calculator-body-button:hover {
   background-color: var(--color-red-hover);
-  scale: 1.2;
+  scale: 1.1;
   font-weight: 900;
 }
 
@@ -157,7 +157,7 @@ a {
 
 .calculator-body-buttons-rest .calculator-body-button:hover {
   background-color: var(--color-dirty-white-hover);
-  scale: 1.2;
+  scale: 1.1;
   font-weight: 900;
 }
 
@@ -172,7 +172,7 @@ a {
 
 .calculator-body-button.equal:hover {
   background-color: var(--color-blue-hover);
-  scale: 1.2;
+  scale: 1.1;
   font-weight: 900;
 }
 
@@ -183,6 +183,6 @@ a {
 
 .calculator-body-button.functions:hover {
   background-color: var(--color-yellow-hover);
-  scale: 1.2;
+  scale: 1.1;
   font-weight: 900;
 }
