@@ -1,0 +1,188 @@
+@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Display:wght@500;700&family=Orbitron:wght@400;700;900&display=swap");
+
+/* Font sizes (px):
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98 */
+
+/* White space (px):
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128 */
+
+/* =============== */
+/* ===VARIABLES=== */
+/* =============== */
+:root {
+  /* COLORS */
+  --color-blue: #3fa7d6;
+  --color-blue-hover: #1d8fc3;
+  --color-red: #ee6352;
+  --color-red-hover: #d64f3e;
+  --color-green: #59cd90;
+  --color-dark-gray: #212529;
+  --color-gray: #edf2f4;
+  --color-dirty-white: #fff9ec;
+  --color-dirty-white-hover: #faf3dd;
+  --color-yellow: #ffd449;
+  --color-yellow-hover: #fac05e;
+  /* FONTS */
+  --font-header: 4.4rem;
+  --font-display: 3.6rem;
+  --font-buttons: 2.4rem;
+  /* PADDING */
+  --padding-large: 6.4rem;
+  --padding-medium: 3.2rem;
+  --padding-small: 1.6rem;
+  /* MARGINS */
+  --margins-large: 6.4rem;
+  --margins-medium: 3.2rem;
+  --margins-small: 1.6rem;
+  /* BORDER STYLE */
+  --border-style: 2px solid #555;
+  /* BORDER RADIUS */
+  --border-radius: 12px;
+}
+
+/* =============== */
+/* =GLOBAL RESET== */
+/* =============== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: Orbitron, sans-serif;
+  line-height: 1;
+  font-weight: 400;
+  color: #555;
+  background-color: #14213d;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  width: 32rem;
+  margin: 0 auto;
+}
+
+/* =============== */
+/* =====HEADER==== */
+/* =============== */
+.header-one {
+  padding: var(--padding-large) 0;
+  font-size: var(--font-header);
+  font-weight: 900;
+  text-align: center;
+  text-decoration: underline;
+  color: #ffa200;
+}
+
+/* =============== */
+/* ======BODY===== */
+/* =============== */
+.calculator-body {
+  padding: var(--padding-medium);
+  border: var(--border-style);
+  border-radius: var(--border-radius);
+  background-color: var(--color-gray);
+  box-shadow: 0px 0px 20px 5px #ffa200;
+}
+
+/* =============== */
+/* ====DISPLAY==== */
+/* =============== */
+.calculator-body-display {
+  padding: var(--padding-medium);
+  border: var(--border-style);
+  border-radius: var(--border-radius);
+  font-family: "Big Shoulders Stencil Display";
+  font-size: var(--font-display);
+  font-weight: 700;
+  text-align: right;
+  margin-bottom: var(--margins-medium);
+  color: var(--color-green);
+  background-color: var(--color-dark-gray);
+}
+
+/* =============== */
+/* ====BUTTONS==== */
+/* =============== */
+.calculator-body-buttons-delete {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: var(--margins-small);
+  margin-bottom: var(--margins-small);
+}
+
+.calculator-body-buttons-delete .calculator-body-button {
+  background-color: var(--color-red);
+  border-radius: 12px;
+  font-size: var(--font-buttons);
+  font-weight: 700;
+  transition: all 0.3s ease-in-out;
+}
+
+.calculator-body-buttons-delete .calculator-body-button:hover {
+  background-color: var(--color-red-hover);
+  scale: 1.2;
+  font-weight: 900;
+}
+
+.calculator-body-button {
+  font-family: "Big Shoulders Stencil Display";
+  font-weight: 500;
+}
+
+.calculator-body-buttons-rest {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: var(--margins-small);
+}
+
+.calculator-body-buttons-rest .calculator-body-button {
+  background: none;
+  background-color: var(--color-dirty-white);
+  border-radius: var(--border-radius);
+  font-size: var(--font-buttons);
+  border-radius: 12px;
+  transition: all 0.3s ease-in-out;
+}
+
+.calculator-body-buttons-rest .calculator-body-button:hover {
+  background-color: var(--color-dirty-white-hover);
+  scale: 1.2;
+  font-weight: 900;
+}
+
+.calculator-body-button.equal {
+  background-color: var(--color-blue);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease-in-out;
+}
+
+.calculator-body-button.equal:hover {
+  background-color: var(--color-blue-hover);
+  scale: 1.2;
+  font-weight: 900;
+}
+
+.calculator-body-button.functions {
+  background-color: var(--color-yellow);
+  transition: all 0.3s ease-in-out;
+}
+
+.calculator-body-button.functions:hover {
+  background-color: var(--color-yellow-hover);
+  scale: 1.2;
+  font-weight: 900;
+}
