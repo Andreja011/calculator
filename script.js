@@ -142,3 +142,9 @@ buttons.addEventListener("click", (event) => {
   inputDigit(target.textContent);
   updateDisplay();
 });
+
+// Dodati funkcionalnost dugmetu
+slider.addEventListener("click", function () {
+  const display = document.querySelector(`.calculator-body-display`);
+  return (display.textContent = "");
+});

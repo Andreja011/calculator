@@ -18,6 +18,7 @@
   --color-green: #59cd90;
   --color-dark-gray: #212529;
   --color-gray: #edf2f4;
+  --color-gray-slider-background: #ced4da;
   --color-dirty-white: #fff9ec;
   --color-dirty-white-hover: #faf3dd;
   --color-yellow: #ffd449;
@@ -97,7 +98,8 @@ a {
 /* ====DISPLAY==== */
 /* =============== */
 .calculator-body-display {
-  padding: var(--padding-medium);
+  height: 9.6rem;
+  padding: var(--padding-medium) var(--padding-small);
   border: var(--border-style);
   border-radius: var(--border-radius);
   font-family: "Big Shoulders Stencil Display";
@@ -112,7 +114,7 @@ a {
 /* =============== */
 /* ====BUTTONS==== */
 /* =============== */
-.calculator-body-buttons-delete {
+.calculator-body-buttons-functional {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
@@ -120,7 +122,7 @@ a {
   margin-bottom: var(--margins-small);
 }
 
-.calculator-body-buttons-delete .calculator-body-button {
+.calculator-body-buttons-functional .calculator-body-button {
   background-color: var(--color-red);
   border-radius: 12px;
   font-size: var(--font-buttons);
@@ -128,7 +130,7 @@ a {
   transition: all 0.3s ease-in-out;
 }
 
-.calculator-body-buttons-delete .calculator-body-button:hover {
+.calculator-body-buttons-functional .calculator-body-button:hover {
   background-color: var(--color-red-hover);
   scale: 1.1;
   font-weight: 900;
@@ -136,7 +138,7 @@ a {
 
 .calculator-body-button {
   font-family: "Big Shoulders Stencil Display";
-  font-weight: 500;
+  font-weight: 900;
 }
 
 .calculator-body-buttons-rest {
@@ -152,37 +154,102 @@ a {
   border-radius: var(--border-radius);
   font-size: var(--font-buttons);
   border-radius: 12px;
-  transition: all 0.3s ease-in-out;
+  transition: 0.4s;
 }
 
 .calculator-body-buttons-rest .calculator-body-button:hover {
   background-color: var(--color-dirty-white-hover);
   scale: 1.1;
-  font-weight: 900;
 }
 
-.calculator-body-button.equal {
+.calculator-body-button.equal.operator {
   background-color: var(--color-blue);
   font-weight: 700;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.3s ease-in-out;
+  transition: 0.4s;
 }
 
-.calculator-body-button.equal:hover {
+.calculator-body-button.equal.operator:hover {
   background-color: var(--color-blue-hover);
   scale: 1.1;
-  font-weight: 900;
 }
 
 .calculator-body-button.operator {
   background-color: var(--color-yellow);
-  transition: all 0.3s ease-in-out;
+  transition: 0.4s;
 }
 
 .calculator-body-button.operator:hover {
   background-color: var(--color-yellow-hover);
   scale: 1.1;
-  font-weight: 900;
+}
+
+/* =============== */
+/* =SWITCH BUTTON= */
+/* =============== */
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  border: var(--border-style);
+  border-radius: 14px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--color-gray-slider-background);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 28px;
+  width: 28px;
+  right: 90px;
+  top: -2px;
+  bottom: 0px;
+  background-color: var(--color-gray);
+  border: var(--border-style);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: var(--color-red);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px var(--color-red);
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(100px);
+  -ms-transform: translateX(100px);
+  transform: translateX(100px);
+}
+
+.slider.round {
+  border-radius: 12px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
 }
