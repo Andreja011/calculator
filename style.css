@@ -176,12 +176,12 @@ a {
   font-weight: 900;
 }
 
-.calculator-body-button.functions {
+.calculator-body-button.operator {
   background-color: var(--color-yellow);
   transition: all 0.3s ease-in-out;
 }
 
-.calculator-body-button.functions:hover {
+.calculator-body-button.operator:hover {
   background-color: var(--color-yellow-hover);
   scale: 1.1;
   font-weight: 900;
